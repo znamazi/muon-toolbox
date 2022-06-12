@@ -24,7 +24,8 @@
     "deploy": "gh-pages -d demo/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18",
+    "react-dom": "^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

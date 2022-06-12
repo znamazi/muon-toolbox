@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save muon-toolbox
+npm install --save https://github.com/znamazi/muon-toolbox.git
 ```
 
 ## Usage

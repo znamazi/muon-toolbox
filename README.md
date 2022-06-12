@@ -15,14 +15,15 @@ npm install --save muon-toolbox
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'muon-toolbox'
-import 'muon-toolbox/dist/index.css'
+import { MuonTools } from 'muon-toolbox'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <MuonTools mode={process.env.MODE} />
   }
 }
+
+MODE = local | dev | production
 ```
 
 ## License

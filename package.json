@@ -20,14 +20,13 @@
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "predeploy": "cd demo && npm install && npm run build",
+    "deploy": "gh-pages -d demo/build"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
@@ -41,6 +40,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
+    "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
@@ -49,5 +49,10 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "rebass": "^4.0.7",
+    "styled-components": "^5.3.5"
+  }
 }

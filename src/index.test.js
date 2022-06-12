@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { MuonTools } from '.'
 
-describe('ExampleComponent', () => {
+describe('MuonTools', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(MuonTools).toBeTruthy()
   })
 })

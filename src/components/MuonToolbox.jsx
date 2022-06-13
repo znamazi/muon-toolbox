@@ -23,6 +23,7 @@ const DropDownMenu = styled.div`
   color: ${({ color }) => color || '#ffffff'};
   position: absolute;
   padding: 2px;
+  z-index: 99999;
 `
 
 const DropDownMenuItem = styled.a`

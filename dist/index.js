@@ -110,7 +110,7 @@ var Type = styled(styledComponents.Text)(_templateObject || (_templateObject = _
 }, function (textTransform) {
   return textTransform;
 });
-var DropDownMenu = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  display: ", ";\n  flex-direction: column;\n  background: ", ";\n  opacity: 0.9;\n  border-radius: 5px;\n  color: ", ";\n  position: absolute;\n  padding: 2px;\n"])), function (_ref5) {
+var DropDownMenu = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  display: ", ";\n  flex-direction: column;\n  background: ", ";\n  opacity: 0.9;\n  border-radius: 5px;\n  color: ", ";\n  position: absolute;\n  padding: 2px;\n  z-index: 99999;\n"])), function (_ref5) {
   var active = _ref5.active;
   return active ? 'flex' : 'none';
 }, function (_ref6) {

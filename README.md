@@ -19,11 +19,14 @@ import { MuonTools } from 'muon-toolbox'
 
 class Example extends Component {
   render() {
-    return <MuonTools mode={process.env.MODE} />
+    return <MuonTools mode={process.env.MODE} menuColor='#313144' menuBackground='#313144' itemColor='#ffffff'/>
   }
 }
 
 MODE = local | dev | production
+
+Default:
+menuColor='#313144' menuBackground='#313144' itemColor='#ffffff'
 ```
 
 ## License

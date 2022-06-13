@@ -108,15 +108,29 @@ var Type = styled(Text)(_templateObject || (_templateObject = _taggedTemplateLit
 }, function (textTransform) {
   return textTransform;
 });
-var DropDownMenu = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  display: ", ";\n  flex-direction: column;\n  background: #313144;\n  opacity: 0.9;\n  border-radius: 5px;\n  color: white;\n  position: absolute;\n  padding: 2px;\n"])), function (_ref5) {
+var DropDownMenu = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  display: ", ";\n  flex-direction: column;\n  background: ", ";\n  opacity: 0.9;\n  border-radius: 5px;\n  color: ", ";\n  position: absolute;\n  padding: 2px;\n"])), function (_ref5) {
   var active = _ref5.active;
   return active ? 'flex' : 'none';
+}, function (_ref6) {
+  var background = _ref6.background;
+  return background || '#313144';
+}, function (_ref7) {
+  var color = _ref7.color;
+  return color || '#ffffff';
 });
-var DropDownMenuItem = styled.a(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n  margin: 10px 5px;\n  display: flex;\n  align-items: center;\n  color: #ffffff;\n  text-decoration: none;\n  width: 32%;\n  padding: 10px;\n"])));
+var DropDownMenuItem = styled.a(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n  margin: 10px 5px;\n  display: flex;\n  align-items: center;\n  color: ", ";\n  text-decoration: none;\n  width: 32%;\n  padding: 10px;\n"])), function (_ref8) {
+  var color = _ref8.color;
+  return color || '#ffffff';
+});
 var Image = styled.img(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n  margin-right: 5px;\n"])));
 var Wrapper = styled.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteralLoose([""])));
 
 var MuonToolbox = function MuonToolbox(props) {
+  var mode = props.mode,
+      menuColor = props.menuColor,
+      menuBackground = props.menuBackground,
+      itemColor = props.itemColor;
+
   var _React$useState = React.useState(false),
       toolBoxOpen = _React$useState[0],
       setToolBoxOpen = _React$useState[1];
@@ -136,22 +150,25 @@ var MuonToolbox = function MuonToolbox(props) {
     ref: btnRef,
     alignItems: "center"
   }, /*#__PURE__*/React.createElement(Type, {
-    color: "#313144",
+    color: menuColor || '#313144',
     padding: "10px",
     onClick: function onClick() {
       return setToolBoxOpen(!toolBoxOpen);
     },
     cursor: "pointer"
   }, "Muon Toolbox")), /*#__PURE__*/React.createElement(DropDownMenu, {
-    active: toolBoxOpen
-  }, chunk(MuonTools[props.mode], 3).map(function (tools, index) {
+    active: toolBoxOpen,
+    background: menuBackground,
+    color: itemColor
+  }, chunk(MuonTools[mode], 3).map(function (tools, index) {
     return /*#__PURE__*/React.createElement(Flex, {
       key: index
     }, tools.map(function (item) {
       return /*#__PURE__*/React.createElement(DropDownMenuItem, {
         href: item.href,
         target: "_blank",
-        key: item.projectName
+        key: item.projectName,
+        color: itemColor
       }, /*#__PURE__*/React.createElement(Image, {
         src: "data:image/svg+xml;base64," + item.icon,
         alt: item.projectName
@@ -163,9 +180,15 @@ var MuonToolbox = function MuonToolbox(props) {
 };
 
 var MuonTools$1 = function MuonTools(props) {
-  var mode = props.mode;
+  var mode = props.mode,
+      menuColor = props.menuColor,
+      menuBackground = props.menuBackground,
+      itemColor = props.itemColor;
   return /*#__PURE__*/React.createElement(MuonToolbox, {
-    mode: mode
+    mode: mode,
+    menuColor: menuColor,
+    menuBackground: menuBackground,
+    itemColor: itemColor
   });
 };
 

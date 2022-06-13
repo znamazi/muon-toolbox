@@ -17,10 +17,10 @@ const Type = styled(Text)`
 const DropDownMenu = styled.div`
   display: ${({ active }) => (active ? 'flex' : 'none')};
   flex-direction: column;
-  background: #313144;
+  background: ${({ background }) => background || '#313144'};
   opacity: 0.9;
   border-radius: 5px;
-  color: white;
+  color: ${({ color }) => color || '#ffffff'};
   position: absolute;
   padding: 2px;
 `
@@ -29,7 +29,7 @@ const DropDownMenuItem = styled.a`
   margin: 10px 5px;
   display: flex;
   align-items: center;
-  color: #ffffff;
+  color: ${({ color }) => color || '#ffffff'};
   text-decoration: none;
   width: 32%;
   padding: 10px;
@@ -41,9 +41,9 @@ const Image = styled.img`
 const Wrapper = styled.div``
 
 const MuonToolbox = (props) => {
+  const { mode, menuColor, menuBackground, itemColor } = props
   const [toolBoxOpen, setToolBoxOpen] = React.useState(false)
   const btnRef = React.useRef()
-
   React.useEffect(() => {
     const closeDropdown = (e) => {
       if (e.path[1] !== btnRef.current) setToolBoxOpen(false)
@@ -59,7 +59,7 @@ const MuonToolbox = (props) => {
     <Wrapper>
       <Flex ref={btnRef} alignItems='center'>
         <Type
-          color='#313144'
+          color={menuColor || '#313144'}
           padding='10px'
           onClick={() => setToolBoxOpen(!toolBoxOpen)}
           cursor='pointer'
@@ -68,14 +68,19 @@ const MuonToolbox = (props) => {
         </Type>
       </Flex>
 
-      <DropDownMenu active={toolBoxOpen}>
-        {chunk(MuonTools[props.mode], 3).map((tools, index) => (
+      <DropDownMenu
+        active={toolBoxOpen}
+        background={menuBackground}
+        color={itemColor}
+      >
+        {chunk(MuonTools[mode], 3).map((tools, index) => (
           <Flex key={index}>
             {tools.map((item) => (
               <DropDownMenuItem
                 href={item.href}
                 target='_blank'
                 key={item.projectName}
+                color={itemColor}
               >
                 <Image
                   src={`data:image/svg+xml;base64,${item.icon}`}

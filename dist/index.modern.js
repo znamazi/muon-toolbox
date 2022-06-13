@@ -92,7 +92,7 @@ var MuonTools = {
 };
 
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
-var Type = styled(Text)(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  color: ", ";\n  cursor: ", ";\n  position: ", ";\n  font-weight: ", ";\n  text-transform: ", ";\n  @media screen and (max-width: 576px) {\n    font-size: ", ";\n  }\n  @media screen and (max-width: 415px) {\n    font-size: ", ";\n  }\n"])), function (_ref) {
+var Type = styled(Text)(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  font-size: 12px;\n  color: ", ";\n  cursor: ", ";\n  position: ", ";\n  font-weight: ", ";\n  text-transform: ", ";\n"])), function (_ref) {
   var color = _ref.color,
       theme = _ref.theme;
   return theme[color];
@@ -107,15 +107,9 @@ var Type = styled(Text)(_templateObject || (_templateObject = _taggedTemplateLit
   return fontWeight;
 }, function (textTransform) {
   return textTransform;
-}, function (_ref5) {
-  var fontSizeXS = _ref5.fontSizeXS;
-  return fontSizeXS;
-}, function (_ref6) {
-  var fontSizeXXS = _ref6.fontSizeXXS;
-  return fontSizeXXS;
 });
-var DropDownMenu = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  display: ", ";\n  flex-direction: column;\n  background: #313144;\n  opacity: 0.9;\n  border-radius: 5px;\n  color: white;\n  position: absolute;\n"])), function (_ref7) {
-  var active = _ref7.active;
+var DropDownMenu = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  display: ", ";\n  flex-direction: column;\n  background: #313144;\n  opacity: 0.9;\n  border-radius: 5px;\n  color: white;\n  position: absolute;\n  padding: 2px;\n"])), function (_ref5) {
+  var active = _ref5.active;
   return active ? 'flex' : 'none';
 });
 var DropDownMenuItem = styled.a(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n  margin: 10px 5px;\n  display: flex;\n  align-items: center;\n  color: #ffffff;\n  text-decoration: none;\n  width: 32%;\n  padding: 10px;\n"])));
@@ -147,8 +141,7 @@ var MuonToolbox = function MuonToolbox(props) {
     onClick: function onClick() {
       return setToolBoxOpen(!toolBoxOpen);
     },
-    cursor: "pointer",
-    fontWeight: toolBoxOpen ? 'bold' : 'normal'
+    cursor: "pointer"
   }, "Muon Toolbox")), /*#__PURE__*/React.createElement(DropDownMenu, {
     active: toolBoxOpen
   }, chunk(MuonTools[props.mode], 3).map(function (tools, index) {

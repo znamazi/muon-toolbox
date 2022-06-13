@@ -6,17 +6,12 @@ import { MuonTools } from '../config/config'
 import { Text } from 'rebass/styled-components'
 
 const Type = styled(Text)`
+  font-size: 12px;
   color: ${({ color, theme }) => theme[color]};
   cursor: ${({ cursor }) => cursor || 'default'};
   position: ${({ position }) => position};
   font-weight: ${({ fontWeight }) => fontWeight};
   text-transform: ${(textTransform) => textTransform};
-  @media screen and (max-width: 576px) {
-    font-size: ${({ fontSizeXS }) => fontSizeXS};
-  }
-  @media screen and (max-width: 415px) {
-    font-size: ${({ fontSizeXXS }) => fontSizeXXS};
-  }
 `
 
 const DropDownMenu = styled.div`
@@ -27,6 +22,7 @@ const DropDownMenu = styled.div`
   border-radius: 5px;
   color: white;
   position: absolute;
+  padding: 2px;
 `
 
 const DropDownMenuItem = styled.a`
@@ -67,7 +63,6 @@ const MuonToolbox = (props) => {
           padding='10px'
           onClick={() => setToolBoxOpen(!toolBoxOpen)}
           cursor='pointer'
-          fontWeight={toolBoxOpen ? 'bold' : 'normal'}
         >
           Muon Toolbox
         </Type>

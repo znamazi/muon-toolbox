@@ -47,7 +47,8 @@ const MuonToolbox = (props) => {
   const btnRef = React.useRef()
   React.useEffect(() => {
     const closeDropdown = (e) => {
-      if (e.path[1] !== btnRef.current) setToolBoxOpen(false)
+      const path = e.path ? e.path : e.composedPath && e.composedPath()
+      if (path[1] !== btnRef.current) setToolBoxOpen(false)
     }
     document.body.addEventListener('click', closeDropdown)
 

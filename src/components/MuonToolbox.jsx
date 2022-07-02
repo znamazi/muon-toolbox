@@ -12,6 +12,9 @@ const Type = styled(Text)`
   position: ${({ position }) => position};
   font-weight: ${({ fontWeight }) => fontWeight};
   text-transform: ${(textTransform) => textTransform};
+  @media screen and (max-width: 450px) {
+    font-size: 9px;
+  }
 `
 
 const DropDownMenu = styled.div`
@@ -34,10 +37,16 @@ const DropDownMenuItem = styled.a`
   text-decoration: none;
   width: 32%;
   padding: 10px;
+  @media screen and (max-width: 450px) {
+    margin: 10px 2px;
+  }
 `
 
 const Image = styled.img`
   margin-right: 5px;
+  @media screen and (max-width: 450px) {
+    width: 20px;
+  }
 `
 const Wrapper = styled.div``
 

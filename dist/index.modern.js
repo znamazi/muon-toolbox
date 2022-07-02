@@ -92,7 +92,7 @@ var MuonTools = {
 };
 
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
-var Type = styled(Text)(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  font-size: 12px;\n  color: ", ";\n  cursor: ", ";\n  position: ", ";\n  font-weight: ", ";\n  text-transform: ", ";\n"])), function (_ref) {
+var Type = styled(Text)(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  font-size: 12px;\n  color: ", ";\n  cursor: ", ";\n  position: ", ";\n  font-weight: ", ";\n  text-transform: ", ";\n  @media screen and (max-width: 450px) {\n    font-size: 9px;\n  }\n"])), function (_ref) {
   var color = _ref.color,
       theme = _ref.theme;
   return theme[color];
@@ -118,11 +118,11 @@ var DropDownMenu = styled.div(_templateObject2 || (_templateObject2 = _taggedTem
   var color = _ref7.color;
   return color || '#ffffff';
 });
-var DropDownMenuItem = styled.a(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n  margin: 10px 5px;\n  display: flex;\n  align-items: center;\n  color: ", ";\n  text-decoration: none;\n  width: 32%;\n  padding: 10px;\n"])), function (_ref8) {
+var DropDownMenuItem = styled.a(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n  margin: 10px 5px;\n  display: flex;\n  align-items: center;\n  color: ", ";\n  text-decoration: none;\n  width: 32%;\n  padding: 10px;\n  @media screen and (max-width: 450px) {\n    margin: 10px 2px;\n  }\n"])), function (_ref8) {
   var color = _ref8.color;
   return color || '#ffffff';
 });
-var Image = styled.img(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n  margin-right: 5px;\n"])));
+var Image = styled.img(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n  margin-right: 5px;\n  @media screen and (max-width: 450px) {\n    width: 20px;\n  }\n"])));
 var Wrapper = styled.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteralLoose([""])));
 
 var MuonToolbox = function MuonToolbox(props) {
